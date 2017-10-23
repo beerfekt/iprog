@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  php:
+    build: apache_php7
+    container_name: apache_php7
+    ports:
+      - "127.0.0.4:80:80"
+      - "443:443"
+    volumes:
+      - ./html:/var/www/html
+    links:
+      - db
+    depends_on:
+      - db
+  db:    
+    image: mysql:5.7
+    container_name: mysql_5_7
+    volumes:
+     - /var/lib/mysql:/var/lib/mysql
+    ports:
+      - "127.0.0.4:3306:3306"  #docker inspect mysql_5_7 | grep IPAddress to get IP of Container -> recommendet for db connection in PHP
+    environment:
+     - MYSQL_ROOT_PASSWORD=test
+     - MYSQL_USER=admin
+     - MYSQL_PASSWORD=test     
+     - MYSQL_DATABASE=database
