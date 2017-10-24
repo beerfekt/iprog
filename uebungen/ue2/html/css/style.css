@@ -1,0 +1,76 @@
+
+
+
+
+
+
+/*Grid 1 - Basic Grid for site*/
+
+.site-wrapper { 
+  width: 80%;
+  margin: 0 auto;
+  height:100vh; 
+  display: grid; 
+  grid-template-rows: 200px 1fr 100px; 
+  grid-template-columns: 25% 25% 25% 25%; 
+} 
+
+	header { 
+	  background:tomato; 
+	  grid-column-start:1; 
+	  grid-column-end:5; 
+	  grid-row-start:1; 
+	  grid-row-end:2; 
+	} 
+	.content { 
+	  background:gold; 
+	  grid-column-start:1; 
+	  grid-column-end:5; 
+	  grid-row-start:2; 
+	  grid-row-end:3; 
+	} 
+
+	footer { 
+	  background:lightblue; 
+	  grid-column-start:1; 
+	  grid-column-end:5; 
+	  grid-row-start:3; 
+	  grid-row-end:4; 
+	}
+
+
+
+/*Grid2 - Basic Grid for content AREA*/
+
+/*ganze fensterhöhe
+
+section {
+  height:100vh; 
+  display: grid; 
+  grid-template-rows: 200px 1fr 100px; 
+  grid-template-columns: 25% 25% 25% 25%; 
+}
+
+	.headline {
+  		background:tomato; 
+  		grid-column-start:1; 
+  		grid-column-end:5; 
+  		grid-row-start:2; 
+  		grid-row-end:3; 
+	}
+*/
+
+
+
+
+
+
+.orderform {
+  
+}
+
+
+
+/*development*/
+
+* { border:1px solid red; }
