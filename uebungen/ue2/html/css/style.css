@@ -34,6 +34,17 @@
 	margin: 0 auto;
 }
 
+
+
+
+
+/*Klassen der Gridarea zuweisen*/
+
+
+.headline {
+	grid-area: headline;
+}
+
 .lieferart {
 	grid-area: lieferart;  /*die spalte lieferdatum wird zur klasse lieferdatum hinzugewiesen*/
 }
@@ -46,23 +57,50 @@
 	grid-area: benutzerinfos;  /*die spalte lieferdatum wird zur klasse lieferdatum hinzugewiesen*/
 }
 
+.footer {
+	grid-area: footer;
+}
 
+
+/*Grid definieren im Eltern-Kontainer*/
 
 
 .orderform {
 	display: grid;
-
 	/*1fr 1fr 1fr -> summe = nenner, einzelne angabe = zähler*/
 	grid-template-columns: 1fr	1fr 1fr; /*1spalte 1/1 bruch*/
 	grid-template-rows; auto; /*höhe der einzelnen zeilen  automatisch auf größe*/
 	grid-template-areas:
-	   " . lieferart .  "
-	   " lieferdatum lieferdatum lieferdatum  "
-	   " benutzerinfos benutzerinfos benutzerinfos "
+	   " . headline . "
+	   " lieferart lieferdatum benutzerinfos  "
+	   " lieferart lieferdatum benutzerinfos "
+	   " lieferart lieferdatum benutzerinfos " 	
+	   " . footer . "
 }
 
 
 
+
+
+
+/*--------------------*/
+/*    Responsivenes */
+/*---------------------*/
+
+
+/*Neudefinition*/
+
+@media screen and (max-width: 700px) {
+	.orderform {
+	 grid-template-areas:
+	   " . headline  . 	"
+	   " lieferart lieferart lieferart "
+	   " lieferdatum lieferdatum lieferdatum  "
+	   " benutzerinfos benutzerinfos benutzerinfos "
+	   " . footer . "	
+	}
+
+}
 
 
 /*Tablet ansicht 700px*/
