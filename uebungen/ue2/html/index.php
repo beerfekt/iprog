@@ -12,7 +12,6 @@
   </head>
   <body>
     <div class="site-wrapper">
-
        <?php
          #database_test
          #include
