@@ -1,0 +1,76 @@
+<!--
+       <form> Attribute:
+
+       	 action: weiterleitung zur seite
+       	 method: get oder post (get -> url, post-> asso array für Backend)
+
+
+-->	
+
+
+<!-- input type : attribute: -->
+	    <!-- type ist vorabprüfung ob passwort oder text oder email etc. -->
+	    <!-- name gibt den key im get oder post an-->
+
+
+	<form action="index.php" method="get" >
+
+<section class="orderform">	
+
+
+
+
+      
+
+
+
+	  <div class="lieferart">      
+
+	  	<h2>Ihre Bestellung: </h2>
+      <div class="placeholder"></div>
+
+      	<h3>Lieferart: </h3>
+	  	<!-- Radio: namen gruppiert, bei gleichem namen kann nur einer ausgewählt werden, sonst mehrfachauswahl möglich -->
+	    <div class="checkbox">
+	      <label><input type="radio" name="versandart"  value="eilversand"  >Eilversand</label>
+	    </div>
+	    <div class="checkbox">
+	      <!-- checked setzt default-wert, der letzte check wird genommen (von oben nach unten) -->
+	      <label><input type="radio" name="versandart" value="standartversand" checked>Standartversand</label>
+	    </div>
+	    <div class="checkbox disabled">
+	      <label><input type="radio" name="versandart"  value="selbstabholer"  >Selbstabholer</label>
+	    </div>
+	  </div>
+
+
+	  <div class="lieferdatum">
+      	<h3>Lieferdatum: </h3>
+	  	<!-- type date stellt datepicker dar, aber geht nur mit manchen browsern -->
+	  	<label for="date">Lieferdatum:</label>
+	  	<input type="date" class="form-control" name="datum" value="tt.mm.jjjj" />
+      </div>
+
+
+	  <div class="benutzerinfos">
+      	<h3>Benutzerinfos: </h3>
+	    <label for="exampleInputEmail1">Benutzer</label>
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Benutzer" name="benutzer">
+	    <small id="emailHelp" class="form-text text-muted">Nutzernamen als Text</small>
+
+
+	    <label for="exampleInputPassword1">Passwort</label>   
+	    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwd">
+	   <button type="submit" class="btn btn-primary">Senden</button>
+	  </div>
+
+
+
+
+
+
+</section>
+
+
+
+	</form> <!-- Form muss in section und  ein div mi tder klasse orderform für grid -->

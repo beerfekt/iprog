@@ -1,0 +1,71 @@
+/*Alter Ansatz*/
+/* Quatsch da man html ändern müsste zum umbauen */
+/*
+.site-wrapper > * {
+	display:grid;
+	border: 1px solid yellow;
+	grid-template-columns: 33% auto 33%;
+    grid-template-rows: 33% 250px 33%;
+}
+
+@media screen and (max-width: 500px){
+
+	.site-wrapper > * {
+		grid-template-columns: 10% auto 10%;	
+	    grid-template-rows: 100px 300px auto;
+	}
+
+}
+*/
+
+
+
+
+/*Development*/
+
+
+* {
+	 border: 1px solid red;
+}
+
+
+.site-wrapper{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.lieferart {
+	grid-area: lieferart;  /*die spalte lieferdatum wird zur klasse lieferdatum hinzugewiesen*/
+}
+
+.lieferdatum {
+	grid-area: lieferdatum;  /*die spalte lieferdatum wird zur klasse lieferdatum hinzugewiesen*/
+}
+
+.benutzerinfos {
+	grid-area: benutzerinfos;  /*die spalte lieferdatum wird zur klasse lieferdatum hinzugewiesen*/
+}
+
+
+
+
+.orderform {
+	display: grid;
+
+	/*1fr 1fr 1fr -> summe = nenner, einzelne angabe = zähler*/
+	grid-template-columns: 1fr	1fr 1fr; /*1spalte 1/1 bruch*/
+	grid-template-rows; auto; /*höhe der einzelnen zeilen  automatisch auf größe*/
+	grid-template-areas:
+	   " . lieferart .  "
+	   " lieferdatum lieferdatum lieferdatum  "
+	   " benutzerinfos benutzerinfos benutzerinfos "
+}
+
+
+
+
+
+/*Tablet ansicht 700px*/
+
+
+/**/
