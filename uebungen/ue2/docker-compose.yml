@@ -5,7 +5,11 @@ services:
     build: apache_php7
     container_name: apache_php7
     ports:
+<<<<<<< HEAD
       - "127.0.0.5:80:80"
+=======
+      - "127.0.0.4:80:80"
+>>>>>>> eb2d7c861a696a26cffc6f5b7286fbd8542941b5
       - "443:443"
     volumes:
       - ./html:/var/www/html
@@ -19,7 +23,11 @@ services:
     volumes:
      - /var/lib/mysql:/var/lib/mysql
     ports:
+<<<<<<< HEAD
       - "127.0.0.5:3306:3306"  #docker inspect mysql_5_7 | grep IPAddress to get IP of Container -> recommendet for db connection in PHP
+=======
+      - "127.0.0.4:3306:3306"  #docker inspect mysql_5_7 | grep IPAddress to get IP of Container -> recommendet for db connection in PHP
+>>>>>>> eb2d7c861a696a26cffc6f5b7286fbd8542941b5
     environment:
      - MYSQL_ROOT_PASSWORD=test
      - MYSQL_USER=admin
