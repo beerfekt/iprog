@@ -26,8 +26,8 @@
    #include
    #include_once("php/database.php");
    #include "html/HelloWorld.html";
-   #include"html/login.html";
-   include"html/Bestellseite.html";
+   include"html/login.html";
+   #include"html/Bestellseite.html";
 
 
 ?> 
