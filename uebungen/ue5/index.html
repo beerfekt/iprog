@@ -1,0 +1,71 @@
+<!DOCTYPE html>  
+<html>
+	<head>  
+	<meta charset="ISO-8859-1"/>  
+	<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>  
+		<div class="site-wrapper">
+			<div class="headline">
+				<h1>Iprog - Uebung 5</h1>
+			</div><!-- headline -->
+
+			<div class="section a1">
+				<h3>Aufgabe 1</h3>
+				<form>  
+				<label>Vorname:</label>
+				 <input	id="vn" type="text" name="vname" >
+				 <label>Nachname:</label>
+				 <input	id="nn"	type="text" name="nname" > 
+				<input class="butt" type="button" onclick="showInput()" value="Lese Eingabe">
+				</form>
+				<div id="output" class="output"></div>
+			</div><!-- a1 -->
+
+			<div class="section a2">
+				<h3>Aufgabe 2</h3>			
+				<form>
+					<select id="colorSelect">
+						<option>Red</option>
+						<option>Green</option>
+						<option>White</option>
+						<option>Black</option>
+					</select>
+					<p>
+					Neue Farbe: <input id="color" type="text" name="color" ><br>
+					<input type="button" onclick="addColor()" value="Farbe hinzuf&uuml;gen"><br>
+					</p>
+				</form>		
+			</div><!-- a2 -->	
+
+			<div class ="section a3">
+				<h3>Aufgabe 3</h3>		
+
+				<!-- 2 selectBoxen nebeneinanderhängen -->
+				<!-- dazwischen die buttons -->
+				<!-- 2 functions "moveLeft, moveRight" auf die Buttons -->
+					<select id="colorSelect">
+						<option>Red</option>
+						<option>Green</option>
+						<option>White</option>
+						<option>Black</option>
+					</select>
+					<input type="button" onclick="addColor()" value="Farbe hinzuf&uuml;gen"><br>
+
+					<input type="button" onclick="addColor()" value="Farbe hinzuf&uuml;gen"><br>
+
+
+					<select id="colorSelect">
+						<option>Red</option>
+						<option>Green</option>
+						<option>White</option>
+						<option>Black</option>
+					</select>
+
+
+			</div>	
+
+		</div><!-- site-wrapper -->		
+		<script src="js/uebung5.js"></script>
+	</body>  
+</html>
