@@ -82,7 +82,7 @@ function addColor(){
 
 
 
-
+/*
 function toRight(){
 	var l = document.getElementById("selectorLeft");
 	var r = document.getElementById("selectorRight");
@@ -124,6 +124,40 @@ function moveLeft(){
 
 
 
+//ausführliche Version
+
+function addRight(){
+	let left = element('left');
+	let right = element('right');
+	leftItemSelected = left.options[left.selectedIndex];
+	right.appendChild(leftItemSelected);
+}
+
+
+function addLeft(){
+	let left = element('left');
+	let right = element('right');
+	rightItemSelected = right.options[right.selectedIndex];
+	left.appendChild(rightItemSelected);	
+}
+*/
+
+//Als Einzeiler
+function add(from,to){
+	selectedItem = 
+	to.appendChild( from.options[from.selectedIndex] );
+}
+
+
+function addLeft(){
+	add(element('right'),element('left'));
+}
+
+function addRight(){
+	add(element('left'),element('right'));
+}
+
+
 function element(id){
  	try {
  		return document.getElementById(id);
@@ -131,8 +165,3 @@ function element(id){
  		console.log("Konnte Element nicht ausgeben weil: " + err);
  	}
 }
-
-
-
-
-

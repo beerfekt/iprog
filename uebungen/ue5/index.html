@@ -39,28 +39,40 @@
 			</div><!-- a2 -->	
 
 			<div class ="section a3">
-				<h3>Aufgabe 3</h3>		
+
+				<div class="a31">
+				<h3>Aufgabe 3</h3>	
+				</div>
+				<div class="a32">
+					<select id="left" multiple>
+						<option>Red</option>
+						<option>Green</option>
+						<option>White</option>
+						<option>Black</option>
+					</select>	
+				</div>
+				<div class="a33">
+					<input type="button" onclick="addRight()" value=">"><br>
+					<input type="button" onclick="addLeft()" value="<"><br>		
+				</div>
+				<div class="a34">
+					<select id="right" multiple>
+						<!-- js adds options from the left -->
+
+					</select>				
+				</div>				
+	
 
 				<!-- 2 selectBoxen nebeneinanderhängen -->
 				<!-- dazwischen die buttons -->
 				<!-- 2 functions "moveLeft, moveRight" auf die Buttons -->
-					<select id="colorSelect">
-						<option>Red</option>
-						<option>Green</option>
-						<option>White</option>
-						<option>Black</option>
-					</select>
-					<input type="button" onclick="addColor()" value="Farbe hinzuf&uuml;gen"><br>
-
-					<input type="button" onclick="addColor()" value="Farbe hinzuf&uuml;gen"><br>
 
 
-					<select id="colorSelect">
-						<option>Red</option>
-						<option>Green</option>
-						<option>White</option>
-						<option>Black</option>
-					</select>
+
+					
+
+
+
 
 
 			</div>	

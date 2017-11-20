@@ -29,7 +29,7 @@ body {
 }
 
 
-//CSS GRID
+/* CSS GRID */
 
 .headline {
 	grid-area: headline;
@@ -52,10 +52,40 @@ body {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: auto;
 	grid-template-areas:
-	". headline headline ."
+	". headline . ."
 	". a1 a2 ."
 	". a3 a3 ."
 	". a3 a3 ."
 }
 
 
+	/* Grid im Grid */
+
+	.a31 {
+		grid-area: a31;
+	}
+
+
+	.a32 {
+		grid-area: a32;
+	}
+
+	.a33 {
+		grid-area: a33;
+	}
+
+
+	.a34 {
+		grid-area: a34;
+	}
+
+
+
+	.a3 {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+		"a31 a31 a31"
+		"a32 a33 a34"
+	}
