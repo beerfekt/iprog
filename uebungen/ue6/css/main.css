@@ -1,0 +1,91 @@
+body {
+	font-family: "arial";
+	color: grey;
+}
+
+
+.feedback {
+	color: red;
+}
+
+
+
+
+.section {
+	margin: 20px;
+	border: 1px solid gray;
+	border-radius: 20px;
+	padding: 30px;
+}
+
+.site-wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+
+.output, input, label{
+	margin-top: 10px;
+}
+
+
+/* CSS GRID */
+
+.headline {
+	grid-area: headline;
+}
+
+.a1 {
+	grid-area: a1;
+}
+
+.a2 {
+	grid-area: a2;
+}
+
+.a3 {
+	grid-area: a3;
+}
+
+.site-wrapper{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+	". headline . ."
+	". a1 a2 ."
+	". a3 a3 ."
+	". a3 a3 ."
+}
+
+
+	/* Grid im Grid */
+
+	.a31 {
+		grid-area: a31;
+	}
+
+
+	.a32 {
+		grid-area: a32;
+	}
+
+	.a33 {
+		grid-area: a33;
+	}
+
+
+	.a34 {
+		grid-area: a34;
+	}
+
+
+
+	.a3 {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+		"a31 a31 a31"
+		"a32 a33 a34"
+	}
