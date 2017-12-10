@@ -25,6 +25,7 @@ body {
 
 
 
+
 .section {
 	margin: 20px;
 	border: 1px solid gray;
@@ -54,10 +55,12 @@ body {
 }
 
 .a2 {
+  display:none;
 	grid-area: a2;
 }
 
 .a3 {
+  display:none;
 	grid-area: a3;
 }
 
@@ -79,64 +82,54 @@ body {
 
 	/*labels*/
 
-	.name-label {
-		grid-area: name-label;
-	}
+  	.anagramm-label {
+  		grid-area: anagramm-label;
+  	}
 
-	.telefon-label {
-		grid-area: telefon-label;
-	}
+  	/*inputs*/
+      .anagramm-input {
+      	grid-area: anagramm-input;
+      }
 
-	.email-label {
-		grid-area: email-label;		
-	}
+  /*button*/
+      .speichern {
+      	grid-area: speichern;
+      }
 
-	/*inputs*/
 
-    .name-input {
-    	grid-area: name-input;
+  	.formgrid {
+  		display: grid;
+  		grid-template-columns: 25% 75%;
+  		grid-template-rows: 1fr 1fr ;
+  		grid-template-areas:
+  			"anagramm-label    anagramm-input    "
+  			"   .              speichern         "
+  		;
+  	}
+
+
+
+    /*Grid -> Feedback*/
+
+        /*feedback*/
+      .anagramm-feedback {
+        grid-area: anagramm-feedback;
+      }
+
+      .anagramm-feedback-headline {
+        grid-area: anagramm-feedback-headline;
+      }
+
+    .anagramm-feedback-grid {
+      display:grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 25% 75%;
+      grid-template-areas: 
+        " .  anagramm-feedback-headline"
+        " .  anagramm-feedback"
+      ;
     }
 
-    .telefon-input {
-    	grid-area: telefon-input;
-    }
-
-    .email-input {
-    	grid-area: email-input;
-    }
-
-
-
-	/*feedback*/
-
-    .name-feedback {
-    	grid-area: name-feedback;
-    }
-
-    .telefon-feedback {
-    	grid-area: telefon-feedback;
-    }
-
-    .email-feedback {
-    	grid-area: email-feedback;
-    }
-
-    .speichern {
-    	grid-area: speichern;
-    }
-
-
-	.formgrid {
-		display: grid;
-		grid-template-columns: 25% 50% 25%;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-		grid-template-areas:
-			"name-label    name-input    name-feedback"
-			"telefon-label telefon-input telefon-feedback"
-			"email-label   email-input   email-feedback"
-			" .            speichern       . "
-		;
-	}
 
 
 
