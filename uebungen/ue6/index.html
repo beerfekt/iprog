@@ -7,44 +7,43 @@
 	<body>  
 		<div class="site-wrapper">
 			<div class="headline">
-				<h1>Iprog - Uebung 5</h1>
+				<h1>Iprog - Uebung 7</h1>
 			</div><!-- headline -->
 
 			<div class="section a1">
 				<h3>Aufgabe 1</h3>
-				<form>  
-				<label>Name:
-				 <input	id="name" type="text" name="name" >
-				</label>
-				<label>Telefon:
-				 <input	id="telefon" type="text" name="telefon" >
-				</label> 
-				<label>EMail:
-				 <input	id="email"	type="text" name="email" > 
-				</label>
-				<input id="speichern" class="butt" type="button" value="Speichern">
+				<form class="formgrid">  
+					<label  class="name-label">Name:</label>
+					 <input class="name-input"	    id="name" type="text" name="name" >
+					 <div   class="name-feedback"><span></span/span></div>
+
+					<label  class="telefon-label">Telefon:</label> 
+					 <input class="telefon-input"	id="telefon" type="text" name="telefon" >
+					 <div   class="telefon-feedback"><span></span/span></div>
+					
+					<label  class="email-label">EMail:</label>
+					 <input class="email-input"	    id="email"	type="text" name="email" >
+					 <div   class="email-feedback"><span></span/span></div>
+					<input  class="speichern"       id="speichern" class="butt"  type="button" value="speichern" disabled>
 				</form>
 				<div id="output" class="output"></div>
-			</div><!-- a1 -->
+			</div><!-- section  a1 -->
 
 			<div class="section a2">
 <!-- 
-				<h3>Aufgabe 2</h3>			
-				<form>
-					<select id="colorSelect">
-						<option>Red</option>
-						<option>Green</option>
-						<option>White</option>
-						<option>Black</option>
-					</select>
-					<p>
-					Neue Farbe: <input id="color" type="text" name="color" ><br>
-					<input type="button" onclick="addColor()" value="Farbe hinzuf&uuml;gen"><br>
-					</p>
+				<h3>Aufgabe 2</h3>
+				<form class="passgrid">
+					<label class="user-label">User</label>	
+					<input class="user-input"    type="text" name="username"  />
+					<label class="passwort-label">Passwort</label>
+					<input id="passwort" class="passwort-input" type="password"  name="password"  />
+					<div class="feedback passwort-feedback"><span id="feedbackspan"></span></div> 								
+					<input id="login" class="login" type="button" value="login" />
 				</form>		
-			
-			</div>
--->
+	
+			</div><!-- section a2 -->
+
+
 			<div class ="section a3">
 <!-- 
 				<div class="a31">
@@ -86,6 +85,6 @@
 			</div>	
 
 		</div><!-- site-wrapper -->		
-		<script src="js/uebung5.js"></script>
+		<script src="js/uebung6.js"></script>
 	</body>  
 </html>
