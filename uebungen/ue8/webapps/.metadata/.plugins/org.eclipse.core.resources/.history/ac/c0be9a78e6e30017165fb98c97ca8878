@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Uebung9 - Aufgabe 2</title>
+</head>
+<body>
+
+<h1>Servertime</h1>
+<form>
+	<input type="radio" name="Lang" value="de">Deutsch<br/>
+	<input type="radio" name="Lang" value="de">Deutsch<br/>
+	<input type="radio" name="Lang" value="de">Deutsch<br/>
+	<input type="submit" value="anfrage senden" >	
+</form>
+
+
+
+</body>
+</html>
