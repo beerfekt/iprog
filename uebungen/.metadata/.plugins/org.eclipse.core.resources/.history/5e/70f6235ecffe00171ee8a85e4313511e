@@ -1,0 +1,18 @@
+        window.onload = function () {
+            setInterval(showDate, 500);
+        }
+        //Ajax
+        function showDate() {
+
+            var output = document.getElementById("ausgabe");
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+                    output.innerHTML = xmlhttp.responseText;
+                }
+            }
+
+            xmlhttp.open("GET", "Aufgabe4", true); //basteln
+            xmlhttp.send();                    //senden
+        }

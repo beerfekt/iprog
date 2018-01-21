@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ue9 - Aufgabe 4</title>
+		<script>
+			window.onload = function()
+			{
+				setInterval( write(), 500);
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

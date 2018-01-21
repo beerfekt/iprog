@@ -1,0 +1,16 @@
+window.onload = function()
+{
+	setInterval( anfrage(), 500);
+}
+			
+
+			
+			function anfrage(){
+				var output = document.getElementById('output');
+				
+				var xmlhttp = new XMLHttpRequest();
+				
+				xmlhttp.onreadyStat
+				
+				
+			}

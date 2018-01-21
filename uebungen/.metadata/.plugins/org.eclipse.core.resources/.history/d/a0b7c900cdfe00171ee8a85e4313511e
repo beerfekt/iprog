@@ -1,0 +1,23 @@
+window.onload = function ()
+{
+	setInterval( anfrage(), 500);
+}
+		
+
+			
+function anfrage(){
+	var output = document.getElementById('output');
+				
+	var xmlhttp = new XMLHttpRequest();
+	
+	//Antwort empfangen ... 
+	xmlhttp.onreadystatechange = function(){
+		if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+			//und auf der HTML Seite ausgeben
+			output.innerHTML = xmlhttp.responseText;
+		}
+	}
+	//Anfrage an Server (Hier Servlet)..
+	xmlhttp.open("get", "time", true); //basteln
+	xmlhttp.send();				//senden
+}

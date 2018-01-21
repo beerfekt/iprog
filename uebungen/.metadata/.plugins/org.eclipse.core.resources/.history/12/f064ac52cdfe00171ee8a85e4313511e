@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ue9 - Aufgabe 4</title>
+
+		<!-- Periodische (setIntervall) Anfrage im Hintergrund (Javascript AJAX) welche vom Servlet beantwortet wird  -->
+	</head>
+	<body>
+
+
+
+		<script src="js/ajax.js"></script>
+	</body>
+</html>
