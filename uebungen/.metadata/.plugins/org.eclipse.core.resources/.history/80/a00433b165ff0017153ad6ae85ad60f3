@@ -1,0 +1,11 @@
+package model;
+
+public class Notiz {
+	
+	
+	private Date datum;
+	private String titel;
+	private String text;
+	
+
+}

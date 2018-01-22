@@ -1,0 +1,8 @@
+package model;
+
+public class NotizContainer {
+
+	private List<Notiz> notizen;
+	
+	
+}
