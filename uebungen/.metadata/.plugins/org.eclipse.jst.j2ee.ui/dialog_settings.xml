@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="true" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="false" key="J2EE_EXPORT_SOURCE"/>
 	<list key="J2EE_IMPORT_null">
 		<item value="/home/beer/Downloads/iprog/uebungen/Uebung10.war"/>
 		<item value="/home/beer/workspace/iprog/iprog_github_backup_letzter_stand/ue9/ue9.war"/>
 	</list>
 	<list key="MRU_RUNTIME_STORE">
 		<item value="Apache Tomcat v8.0"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="/home/beer/workspace/docker/docker_tomcat_beispiel/ue10.war"/>
+		<item value="/home/beer/workspace/docker/ue10.war"/>
 	</list>
 </section>
