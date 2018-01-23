@@ -84,7 +84,7 @@ public class NotizServlet extends HttpServlet {
 			if(request.getParameter("notiz") == null || request.getParameter("notiz").equals("")) {
 				out.println("<font color=\"red\">Es muss eine Notiz angegeben werden!</font>");
 			} else {
-				if(session.getAttribute("notizen") == null) {
+				 if(session.getAttribute("notizen") == null) {
 					session.setAttribute("notizen", new NotizContainer());
 				}
 				

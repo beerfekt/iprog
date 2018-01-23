@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -45,37 +46,28 @@ public class Aufgabe1 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
+
+		
 		//NOTIZEN AUSLESEN
-		
-		
-		//Sessionobjekt erstellen
-		HttpSession currentSession = request.getSession(true);
-		
-		
-		//gibt es Notizcontainer in dieser Session für diesen key?
-		if ( currentSession.getAttribute("notizen") == null ) {
-			//falls nein, erstellen, zuordnen
-			currentSession.setAttribute("notizen", new NotizContainer());
-		}
-		
 		//Falls ja: den Container aus der Session auslesen:
-		NotizContainer notizen = (NotizContainer) currentSession.getAttribute("notizen");
-		
+		NotizContainer notizen = getContainerFromCurrentSession(request);		
 		
 		//form erstellen:
 		String form = "<form  method=\"post\"> \n"
 			    + " <input type=\"text\" name=\"notiz\" value=\"\" /> \n"
-			    + " <input type=\"submit\" name=\"speichern\"  />     \n"
+			    + " <input type=\"submit\" value=\"speichern\"  />     \n"
 			    + "</form>  \n" ;
 		
-		
 		//Ul erstellen mit ausgelesenen Notizen:
-		String notizUl = erstelleULNotizen(notizen);
-					
+		String notizUl = erstelleULNotizen(notizen);			
 		
+		String deleteForm = " <form method=\"post\" /> \n "
+				          + "    <input type=\"submit\" name=\"delete\" value=\"entfernen\" /> "
+				          + " </form> ";
 		
 		//Seite + generierten Inhalt ausgeben
-		printPage(response.getWriter(), form + notizUl);
+		printPage(response.getWriter(), form + notizUl + deleteForm);
 	}//doGet
 	
 	
@@ -84,34 +76,23 @@ public class Aufgabe1 extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		PrintWriter out = response.getWriter();
-		
-		
-		//NOTIZ EINLESEN:
-		
-		
-		//1. session auslesen
-		HttpSession currentSession = request.getSession(true);
-		
-		//2. werte einpflegen:
-		
-		//wenn nichts eingegeben:
-		if (request.getParameter("notiz") == null ||  request.getParameter("notiz").equals("")) {
-			out.println("<font color=\"red\">Es muss eine Notiz angegeben werden!</font>");
+		//Notizen löschen
+		if (request.getParameter("delete") != null) {
+				deleteContainer(request);
 		} else {
-			
-			//Prüfen ob Session neu und Container vorhanden
-			if (currentSession.getAttribute("notizen") == null)  {
-				currentSession.setAttribute("notizen", new NotizContainer());
-			} 
-			
-			
-			//Container füllen:
-			NotizContainer notizen = (NotizContainer) currentSession.getAttribute("notizen");
-			notizen.getNotizen().add( new Notiz( new Date(),request.getParameter("notiz")));
-	        out.println("<font color=\"green\">Notiz sind drin!</font>");
-		}
+			//wenn nichts eingegeben:
+			if (request.getParameter("notiz") == null ||  request.getParameter("notiz").equals("")) {
+				out.println("<font color=\"red\">Es muss eine Notiz angegeben werden!</font>");
+			} else {
+									
+				//Container füllen:
+				NotizContainer notizen = getContainerFromCurrentSession(request);	
+			    //Notiz hinzufügen
+				notizen.getNotizen().add( new Notiz( new Date(), request.getParameter("notiz")));
+		        out.println("<font color=\"green\">Notiz sind drin!</font>");
+			}//if else
+		}//if else
 		
 		doGet(request, response);
 	}//doPost
@@ -120,20 +101,49 @@ public class Aufgabe1 extends HttpServlet {
 	
 	
 	
-	//Ul für notizen erstellen:
+	private NotizContainer getContainerFromCurrentSession( HttpServletRequest request ){
+		//1. session auslesen
+		HttpSession currentSession = request.getSession(true);		
+		//Prüfen ob Session neu und Container vorhanden
+		//gibt es Notizcontainer in dieser Session für diesen key?
+		if (currentSession.getAttribute("notizen") == null)  {
+			//falls nein, ordne einen neuen zu
+			currentSession.setAttribute("notizen", new NotizContainer());
+		} 		
+		//Container füllen
+		return (NotizContainer) currentSession.getAttribute("notizen");
+	}
 	
-	private String erstelleULNotizen( NotizContainer notizen ){
-		
+	
+	
+	
+	private void deleteContainer( HttpServletRequest request ){
+		//1. session auslesen
+		HttpSession currentSession = request.getSession(true);		
+		//Prüfen ob Session neu und Container vorhanden
+		//gibt es Notizcontainer in dieser Session für diesen key?
+		if (currentSession.getAttribute("notizen") != null)  {
+			//falls nein, ordne einen neuen zu
+			currentSession.setAttribute("notizen", null);
+		} 		
+	}
+	
+	
+	
+	
+	
+	
+	//Ul für notizen erstellen:	
+	private String erstelleULNotizen( NotizContainer notizen ){	
+		//SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
 		String content = "<h1> Gespeicherte Notizen: </h1> \n"
-				       + "	<ul> \n";
-		
+				       + "	<ul> \n";		
 		// Notizen aus dem Container auslesen (Falls vorhanden)
 		for (Notiz notiz : notizen.getNotizen() ) {
-			 content += "<li>"  + notiz.getInhalt() + "</li> \n";
-		}
-		
+			 content += "<li>" + new SimpleDateFormat("dd.MM.yyyy HH:mm").format(notiz.getDatum())  
+			          + "  [  " +  notiz.getInhalt() + "  ]</li> \n";
+		}		
 		content += " </ul> \n";		
-		
 		return content;
 	}
 	
@@ -154,8 +164,7 @@ public class Aufgabe1 extends HttpServlet {
 				      + "	<body> \n";	
 		
 		String footer = "	</body>"
-				      + "</html> \n" ;
-				    
+				      + "</html> \n" ;	    
 	
 	out.println(head + content + footer);
 	
