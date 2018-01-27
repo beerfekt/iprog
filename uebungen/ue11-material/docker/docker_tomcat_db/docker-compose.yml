@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql_5_7
+    volumes:
+     - /var/lib/mysql:/var/lib/mysql
+     - ./db-backup/CreateDBandTables.sql:/docker-entrypoint-initdb.d/CreateDBandTables.sql
+    ports:
+     - "127.0.0.1:3306:3306"
+    environment:
+     - MYSQL_ROOT_PASSWORD=test
+     - MYSQL_USER=admin
+     - MYSQL_PASSWORD=test     
+     - MYSQL_DATABASE=database
+  uebung9:
+    image: tomcat:latest
+    ports:
+     - "127.0.0.100:80:8080"
+    volumes:
+     - ./ue10.war:/usr/local/tomcat/webapps/ue10.war  
+    links:
+     - db
+    depends_on:
+     - db
